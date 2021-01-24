@@ -111,8 +111,7 @@ def brand_str(pg_contents):
 
 
 for URL in URL_list:
-    webpage = open(URL).read()
-    # webpage = requests.get(URL, headers=header)
+    webpage = requests.get(URL, headers=header)
     page_content = BeautifulSoup(webpage, "lxml")
     items_info += title_str(page_content)
     items_info += img_urls(page_content)
